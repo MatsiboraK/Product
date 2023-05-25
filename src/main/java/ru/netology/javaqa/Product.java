@@ -1,5 +1,5 @@
 package ru.netology.javaqa;
-public class Product {
+public class Product implements Usable {
 
     protected int id;
     protected String name;
@@ -44,6 +44,7 @@ public class Product {
         this.price = price;
     }
 
+    @Override
     public void use() {
         System.out.println("Продукт " + name + "используется");
     }

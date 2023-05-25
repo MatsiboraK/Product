@@ -1,5 +1,5 @@
 package ru.netology.javaqa;
-public class Book extends Product {
+public class Book extends Product implements Comparable<Book> {
     private String author;
     private int pages;
     private int publishedYear;
@@ -48,5 +48,16 @@ public class Book extends Product {
 
     public void setPublishedYear(int publishedYear) {
         this.publishedYear = publishedYear;
+    }
+
+    @Override
+    public int compareTo(Book o) {
+        if (this.pages < o.pages) {
+            return -1;
+        }else if (this.pages > o.pages) {
+            return 1;
+        }else {
+            return 0;
+        }
     }
 }
